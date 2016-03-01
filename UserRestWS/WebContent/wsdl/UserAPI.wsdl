@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://api" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://api" xmlns:intf="http://api" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://api" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getUserData">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="name" type="xsd:string"/>
+      <element name="dateJoined" type="xsd:dateTime"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUserDataResponse">
+    <complexType>
+     <sequence>
+      <element name="getUserDataReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getUserDataRequest">
+
+      <wsdl:part element="impl:getUserData" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserDataResponse">
+
+      <wsdl:part element="impl:getUserDataResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UserAPI">
+
+      <wsdl:operation name="getUserData">
+
+         <wsdl:input message="impl:getUserDataRequest" name="getUserDataRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUserDataResponse" name="getUserDataResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UserAPISoapBinding" type="impl:UserAPI">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getUserData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UserAPIService">
+
+      <wsdl:port binding="impl:UserAPISoapBinding" name="UserAPI">
+
+         <wsdlsoap:address location="http://localhost:8080/UserSearchAPI/services/UserAPI"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
