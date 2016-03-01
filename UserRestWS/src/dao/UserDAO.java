@@ -51,8 +51,8 @@ public ArrayList<User> fetchListOfUsers(User user) throws Exception
 		}
 		if(user.getDateJoined()!= null)
 		{
-		stmt.setDate(5, (Date) user.getDateJoined());
-		stmt.setDate(6, (Date) user.getDateJoined());
+		stmt.setDate(5, new Date(user.getDateJoined().getTime()));
+		stmt.setDate(6, new Date(user.getDateJoined().getTime()));
 		}
 		else
 		{

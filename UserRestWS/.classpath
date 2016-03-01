@@ -43,7 +43,7 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-core-1.17.jar">
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-core-1.17.jar" sourcepath="C:/Users/CS/.m2/repository/com/sun/jersey/jersey-core/1.17/jersey-core-1.17-sources.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
