@@ -62,7 +62,7 @@ public class UserAPI {
 		 ArrayList<User> lstUsers = new ArrayList<User>();
 		 GenericEntity<List<User>> entity = null;
 		 try {
-			 if(dateJoined!= null || dateJoined != "")
+			 if(!(dateJoined!= null || dateJoined == ""))
 			    dateJoined1 = formatter.parse(dateJoined);
 			 u1.setDateJoined(dateJoined1);
 			 lstUsers = userDAO.fetchListOfUsers(u1);
